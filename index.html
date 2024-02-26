@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="log0">Portfo<span>lio.</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Sandesh Acharya</h1>
+            <h3>And I'm a <span id="multiple-text"></span></h3>
+            <p> This website gives you some general knowledge about releating to c programming, c++ programing, data structure and front end development.</p>
+    
+            <div class="social-media">
+                <a href="https://www.facebook.com/sandesh.acharya.5201"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="https://www.instagram.com/sandesh.acharya.5201/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://github.com/sandeshacharya2"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/sandesh-acharya-a1a0b1256/"><i class='bx bxl-linkedin'></i></a>
+            </div>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="photos/home.png" alt="">
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const typed = new Typed('#multiple-text', {
+            strings: ['Front-end Developer', 'Teacher', 'Student'],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 100,
+            loop: true
+        });
+    </script>
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="photos/about.png" alt="">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Front-end Developer</h3>
+            <p>Hello, my name is Sandesh Acharya. I am from Beni Municipality ward no.6 Beni Myagdi. 
+                Currently I am in Beni Myagdi and I am studying BICTE 4<sup>th</sup> semester in Myagdi Multiple Campus. 
+                If you want to know more about me you can also follow me in social media. 
+                which links are provided with in this website.
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">Our <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-code-alt'></i>
+                <h3>Front-end Web Development</h3>
+                <p>A front-end developer builds the front-end portion of websites and web applications—the part users see and interact with. 
+                    A front-end developer creates websites and applications using web languages such as HTML, CSS, and JavaScript that allow users to access and interact with the site or app.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <img src="photos/C.png" alt=""> <img src="photos/C++.png" alt="">
+                <h3>C and C++ programming</h3>
+                <p>C is a structural or procedural programming language that was used for system applications and low-level programming applications. 
+                    Whereas C++ is an object-oriented programming language having some additional features like Encapsulation, Data Hiding, Data Abstraction, Inheritance, Polymorphism, etc.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+               <img src="photos/data.png" alt="">
+                <h3>Database Management</h3>
+                <p>Data management is the practice of collecting, organizing, and accessing data to support productivity, 
+                    efficiency, and decision-making.</p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="porfolio-container">
+            <div class="portfolio-box">
+                <img src="photos/portfolio1.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="photos/portfolio2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="photos/portfolio3.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="photos/portfolio4.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="photos/portfolio5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="photos/portfolio6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+                    </p>
+                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Moblie Number">
+                <input type="text" placeholder="Email Subject">
+            </div>  
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">          
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p> <h2>Copyright &copy by Sandesh Acharya 2024 | All Rights Reserved </h2></p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+</body>
+
+</html>
