@@ -770,7 +770,7 @@ textarea.form-control {
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         align-items: stretch;
         gap: 0.8rem;
     }
@@ -847,6 +847,7 @@ textarea.form-control {
 
     .footer-bottom {
         font-size: 0.85rem;
+        flex-direction: row;
     }
 
     .btn {
