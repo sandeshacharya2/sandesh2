@@ -1,186 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sandesh Acharya | IT Student & Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header class="header">
-        <a href="#" class="log0">Portfo<span>lio.</span></a>
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Sandesh Acharya</h1>
-            <h3>And I'm a <span id="multiple-text"></span></h3>
-            <p> This website gives you some general knowledge about releating to c programming, c++ programing, data structure and front end development.</p>
-    
-            <div class="social-media">
-                <a href="https://www.facebook.com/sandesh.acharya.5201"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/sandesh.acharya.5201/"><i class='bx bxl-instagram'></i></a>
-                <a href="https://github.com/sandeshacharya2"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/sandesh-acharya-a1a0b1256/"><i class='bx bxl-linkedin'></i></a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-code"></i>
+                <span>SandeshA</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="cv.html" class="btn btn-outline">Download CV</a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="home-img">
-            <img src="photos/home.png" alt="">
-        </div>
-    </section>
+    </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        const typed = new Typed('#multiple-text', {
-            strings: ['Front-end Developer', 'Teacher', 'Student'],
-            typeSpeed: 100,
-            backSpeed: 100,
-            backDelay: 100,
-            loop: true
-        });
-    </script>
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="photos/about.png" alt="">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Front-end Developer</h3>
-            <p>Hello, my name is Sandesh Acharya. I am from Beni Municipality ward no.6 Beni Myagdi. 
-                Currently I am in Beni Myagdi and I am studying BICTE 4<sup>th</sup> semester in Myagdi Multiple Campus. 
-                If you want to know more about me you can also follow me in social media. 
-                which links are provided with in this website.
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">Our <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class='bx bx-code-alt'></i>
-                <h3>Front-end Web Development</h3>
-                <p>A front-end developer builds the front-end portion of websites and web applications—the part users see and interact with. 
-                    A front-end developer creates websites and applications using web languages such as HTML, CSS, and JavaScript that allow users to access and interact with the site or app.</p>
-                <a href="" class="btn">Read More</a>
-            </div>
-            <div class="services-box">
-                <img src="photos/C.png" alt=""> <img src="photos/C++.png" alt="">
-                <h3>C and C++ programming</h3>
-                <p>C is a structural or procedural programming language that was used for system applications and low-level programming applications. 
-                    Whereas C++ is an object-oriented programming language having some additional features like Encapsulation, Data Hiding, Data Abstraction, Inheritance, Polymorphism, etc.</p>
-                <a href="" class="btn">Read More</a>
-            </div>
-            <div class="services-box">
-               <img src="photos/data.png" alt="">
-                <h3>Database Management</h3>
-                <p>Data management is the practice of collecting, organizing, and accessing data to support productivity, 
-                    efficiency, and decision-making.</p>
-                <a href="" class="btn">Read More</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest <span>Project</span></h2>
-
-        <div class="porfolio-container">
-            <div class="portfolio-box">
-                <img src="photos/portfolio1.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="photos/portfolio2.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        BICTE 8th Semester Student
+                    </div>
+                    
+                    <h1>Sandesh Acharya</h1>
+                    <p class="hero-subtitle">
+                        IT Student • Python Developer • Database Handler • Frontend Manager • Researcher • Basic Level Teacher
+                        <br>
+                       <Script:src></Script:src> • Studying at  Myagdi Multiple Campus
                     </p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Major Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Dedicated</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">
+                            <i class="fas fa-laptop-code"></i> View Projects
+                        </a>
+                        <a href="contact.html" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                        <a href="https://github.com/sandeshacharya" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="photos/portfolio3.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="photos/portfolio4.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="photos/portfolio5.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="photos/portfolio6.jpg" alt="">
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Web design is the art of planning and arranging the visual elements of a website to create an engaging and user-friendly experience. It involves decisions about layout, colors, fonts, and other design elements to enhance the overall aesthetics and functionality of the site.
-                    </p>
-                    <a href="#"><i class='bx bx-link-external' ></i></a>
+                
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="assests/images/Sandesh Acharya.jpg" alt="Sandesh Acharya">
+                        <div class="image-overlay"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
 
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Mastering the tools and technologies that power modern applications</p>
             </div>
-            <div class="input-box">
-                <input type="number" placeholder="Moblie Number">
-                <input type="text" placeholder="Email Subject">
-            </div>  
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">          
-        </form>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python Development</h3>
+                    <p>Django framework, Flask, Data Analysis, Automation</p>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Django Web Applications</li>
+                        <li><i class="fas fa-check"></i> REST APIs Development</li>
+                        <li><i class="fas fa-check"></i> Data Processing & Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>SQL, MySQL, PostgreSQL, Database Design & Optimization</p>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Database Design</li>
+                        <li><i class="fas fa-check"></i> SQL Query Optimization</li>
+                        <li><i class="fas fa-check"></i> Data Migration</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Modern UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Responsive Layouts</li>
+                        <li><i class="fas fa-check"></i> Interactive Web Apps</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-text">
-            <p> <h2>Copyright &copy by Sandesh Acharya 2024 | All Rights Reserved </h2></p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="footer-logo">SandeshA</a>
+                    <p class="footer-text">
+                        IT Student passionate about creating innovative solutions through technology. 
+                        Currently pursuing BICTE at Myagdi Multiple Campus.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/sandesh.acharya.5201" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sandesh-acharya-a1a0b1256/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/sandeshacharya2" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!-- <a href="mailto:sandeshacharya471@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> sandeshacharya471@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +977 9862904097</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Myagdi, Nepal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sandesh Acharya. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
