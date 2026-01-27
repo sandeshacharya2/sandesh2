@@ -18,5 +18,6 @@ export default defineConfig({
   },
   build: {
     copyPublicDir: true,
+    outDir: 'docs',
   },
 })
