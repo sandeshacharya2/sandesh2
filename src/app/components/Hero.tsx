@@ -224,7 +224,7 @@ export function Hero() {
                 className="absolute inset-0 rounded-full"
               />
               <ImageWithFallback
-                src="public/s.jpg"
+                src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
