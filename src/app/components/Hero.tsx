@@ -177,7 +177,7 @@ export function Hero() {
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Avatar with animation */}
+          {/* Avatar with simplified animation */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
@@ -190,56 +190,17 @@ export function Hero() {
             className="mb-8"
           >
             <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6 }}
-              className="w-48 h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl"
             >
-              {/* Pulsing rings */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 0, 0.5],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 rounded-full border-4 border-blue-500"
-              />
-              <motion.div
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [0.5, 0, 0.5],
-                }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                className="absolute inset-0 rounded-full border-4 border-purple-500"
-              />
-              
-              <motion.div
-                animate={{
-                  boxShadow: [
-                    '0 0 20px rgba(59, 130, 246, 0.5)',
-                    '0 0 60px rgba(79, 70, 229, 0.8)',
-                    '0 0 20px rgba(59, 130, 246, 0.5)',
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 rounded-full"
-              />
               <ImageWithFallback
                 src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              
-              {/* Animated rings */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 border-4 border-transparent border-t-blue-500 border-r-purple-500 rounded-full"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 border-4 border-transparent border-b-pink-500 border-l-indigo-500 rounded-full"
-              />
+              {/* Simple border accent - no heavy animation */}
+              <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
             </motion.div>
           </motion.div>
           
@@ -265,7 +226,7 @@ export function Hero() {
                 className="relative inline-block"
               >
                 <motion.span
-                  className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold" // Added font-bold here
+                  className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold"
                   animate={{
                     backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                   }}
