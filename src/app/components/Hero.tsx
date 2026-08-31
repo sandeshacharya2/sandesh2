@@ -33,31 +33,21 @@ export function Hero() {
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Avatar with simplified animation */}
+          
+          {/* Avatar with ultra-lightweight animation (Mobile Optimized) */}
           <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{
-              type: 'spring',
-              stiffness: 260,
-              damping: 20,
-              delay: 0.2,
-            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl"
-            >
+            <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl border-2 border-blue-500/30">
               <ImageWithFallback
                 src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              {/* Simple border accent */}
-              <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
-            </motion.div>
+            </div>
           </motion.div>
           
           {/* Main heading with stagger animation */}
@@ -71,7 +61,7 @@ export function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className=" text-theme"
+                className="text-theme"
               >
                 Hi, I'm{' '}
               </motion.span>
@@ -168,20 +158,17 @@ export function Hero() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{
-                  type: 'spring',
-                  stiffness: 260,
-                  damping: 20,
+                  duration: 0.5,
                   delay: 1.4 + index * 0.1,
                 }}
                 whileHover={{ 
-                  scale: 1.3,
-                  rotate: [0, -10, 10, -10, 0],
+                  scale: 1.1,
                   y: -5,
                 }}
-                whileTap={{ scale: 0.9 }}
+                whileTap={{ scale: 0.95 }}
                 className={`p-4 bg-gradient-to-br ${bgColor} text-white rounded-full shadow-lg hover:shadow-2xl transition-shadow relative group`}
                 aria-label={label}
               >
