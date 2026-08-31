@@ -179,29 +179,19 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar with simplified animation */}
           <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{
-              type: 'spring',
-              stiffness: 260,
-              damping: 20,
-              delay: 0.2,
-            }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-8"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl"
-            >
+            <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl">
               <ImageWithFallback
                 src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              {/* Simple border accent - no heavy animation */}
               <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
-            </motion.div>
+            </div>
           </motion.div>
           
           {/* Main heading with stagger animation */}
