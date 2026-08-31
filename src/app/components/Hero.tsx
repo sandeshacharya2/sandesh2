@@ -18,162 +18,18 @@ export function Hero() {
       <ParticlesBackground />
       <FloatingShapes />
       
-      {/* Enhanced animated background elements */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 180, 360],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          rotate: [360, 180, 0],
-          opacity: [0.5, 0.3, 0.5],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl"
-      />
+      {/* Static background elements (optimized for mobile performance) */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 right-1/3 w-48 h-48 bg-teal-400/10 dark:bg-teal-500/5 rounded-full blur-2xl" />
+      <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-2xl" />
+      <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-gradient-to-br from-pink-400/20 to-rose-500/10 dark:from-pink-500/10 dark:to-rose-600/10 rounded-lg blur-xl" />
+      <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-gradient-to-br from-cyan-400/30 to-emerald-500/20 dark:from-cyan-500/15 dark:to-emerald-600/15 rounded-full blur-lg" />
       
-      {/* New animated background elements */}
-      <motion.div
-        animate={{
-          y: [0, -40, 0],
-          x: [0, 30, 0],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute top-1/4 right-1/3 w-48 h-48 bg-teal-400/10 dark:bg-teal-500/5 rounded-full blur-2xl"
-      />
-      <motion.div
-        animate={{
-          scale: [0.9, 1.1, 0.9],
-          rotate: [0, 90, 180, 270, 360],
-          opacity: [0.3, 0.1, 0.3],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-        className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-2xl"
-      />
-      <motion.div
-        animate={{
-          x: [-50, 50, -50],
-          y: [20, -20, 20],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute top-1/3 left-1/4 w-32 h-32 bg-gradient-to-br from-pink-400/20 to-rose-500/10 dark:from-pink-500/10 dark:to-rose-600/10 rounded-lg blur-xl"
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.4, 0.1, 0.4],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          repeatDelay: 2,
-        }}
-        className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-gradient-to-br from-cyan-400/30 to-emerald-500/20 dark:from-cyan-500/15 dark:to-emerald-600/15 rounded-full blur-lg"
-      />
-      
-      {/* Animated grid background with enhanced depth */}
+      {/* Static grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-        <motion.div
-          animate={{
-            opacity: [0.1, 0.3, 0.1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-          }}
-          className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5"
-        />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-600/5" />
       </div>
-      
-      {/* Floating orbs with path animation */}
-      <motion.div
-        animate={{
-          pathLength: [0, 1],
-          opacity: [0, 1, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
-        style={{ 
-          maskImage: 'radial-gradient(circle, white 10%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(circle, white 10%, transparent 70%)'
-        }}
-      >
-        <svg className="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-          <motion.circle
-            cx="200"
-            cy="300"
-            r="8"
-            fill="url(#blueOrb)"
-            animate={{
-              cx: [200, 800, 200],
-              cy: [300, 200, 300],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-          <motion.circle
-            cx="700"
-            cy="600"
-            r="6"
-            fill="url(#purpleOrb)"
-            animate={{
-              cx: [700, 300, 700],
-              cy: [600, 700, 600],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: 'linear',
-              delay: 1,
-            }}
-          />
-          <defs>
-            <radialGradient id="blueOrb" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8"/>
-              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
-            </radialGradient>
-            <radialGradient id="purpleOrb" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.7"/>
-              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0"/>
-            </radialGradient>
-          </defs>
-        </svg>
-      </motion.div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -199,7 +55,7 @@ export function Hero() {
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              {/* Simple border accent - no heavy animation */}
+              {/* Simple border accent */}
               <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
             </motion.div>
           </motion.div>
@@ -303,9 +159,9 @@ export function Hero() {
             className="flex items-center justify-center gap-4 mb-12"
           >
             {[
-              { Icon: Facebook, href: 'https://facebook.com  ', bgColor: 'from-blue-600 to-blue-800', label: 'Facebook' },
-              { Icon: Github, href: 'https://github.com  ', bgColor: 'from-gray-600 to-gray-800', label: 'GitHub' },
-              { Icon: Linkedin, href: 'https://linkedin.com  ', bgColor: 'from-blue-600 to-blue-800', label: 'LinkedIn' },
+              { Icon: Facebook, href: 'https://facebook.com', bgColor: 'from-blue-600 to-blue-800', label: 'Facebook' },
+              { Icon: Github, href: 'https://github.com', bgColor: 'from-gray-600 to-gray-800', label: 'GitHub' },
+              { Icon: Linkedin, href: 'https://linkedin.com', bgColor: 'from-blue-600 to-blue-800', label: 'LinkedIn' },
             ].map(({ Icon, href, bgColor, label }, index) => (
               <motion.a
                 key={href}
