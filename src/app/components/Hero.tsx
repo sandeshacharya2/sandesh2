@@ -27,12 +27,9 @@ export function Hero() {
   };
 
   return (
-    // FIX 1: 100dvh prevents mobile browser address bar from causing layout jumps and animation restarts
     <section id="hero" className="min-h-[100dvh] flex items-center justify-center pt-20 relative overflow-hidden bg-theme">
       
-      {/* FIX 2: Completely removed ParticlesBackground and FloatingShapes to stop mobile GPU hanging */}
-      
-      {/* Background elements - ONLY rendered on desktop */}
+      {/* Background elements - ONLY rendered on desktop to prevent mobile hanging */}
       {!isMobile && (
         <>
           <motion.div
@@ -45,109 +42,54 @@ export function Hero() {
             transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
             className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl"
           />
-          <motion.div
-            animate={{ y: [0, -40, 0], x: [0, 30, 0], opacity: [0.2, 0.4, 0.2] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute top-1/4 right-1/3 w-48 h-48 bg-teal-400/10 dark:bg-teal-500/5 rounded-full blur-2xl"
-          />
-          <motion.div
-            animate={{ scale: [0.9, 1.1, 0.9], rotate: [0, 90, 180, 270, 360], opacity: [0.3, 0.1, 0.3] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-            className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-2xl"
-          />
         </>
       )}
       
-      {/* Lightweight static grid background (safe for mobile) */}
+      {/* Lightweight static grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           
-          {/* FIX 3: Avatar is now completely static with no extra animations or circles */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8"
-          >
-            <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
+          {/* COMPLETELY NORMAL IMAGE: No motion, no borders, no shadows */}
+          <div className="mb-8">
+            <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full overflow-hidden">
               <ImageWithFallback
                 src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
             </div>
-          </motion.div>
+          </div>
           
-          {/* Main heading */}
+          {/* Main heading: Simplified to a single, lightweight one-time fade-in. NO infinite loops. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
+            className="mb-6"
           >
-            <motion.h1 className="text-5xl md:text-6xl lg:text-7xl mb-6">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-theme"
-              >
-                Hi, I'm{' '}
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6, type: 'spring', stiffness: 200 }}
-                className="relative inline-block"
-              >
-                <motion.span
-                  className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold"
-                  // FIX 4: Disable infinite gradient shift on mobile
-                  animate={isMobile ? {} : { backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                  style={{ backgroundSize: '200% 200%' }}
-                >
-                  Sandesh Acharya
-                </motion.span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl">
+              <span className="text-theme">Hi, I'm </span>
+              
+              {/* Static gradient text, no background position animation */}
+              <span className="relative inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
+                Sandesh Acharya
                 
-                {/* FIX 5: Sparkles are static on mobile, animated only on desktop */}
-                {isMobile ? (
-                  <Sparkles className="text-yellow-500 inline-block ml-2" size={32} />
-                ) : (
-                  <motion.span
-                    animate={{ rotate: [0, 14, -8, 14, -4, 10, 0], scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, delay: 1, repeat: Infinity, repeatDelay: 3 }}
-                    className="inline-block ml-2"
-                  >
-                    <Sparkles className="text-yellow-500" size={32} />
-                  </motion.span>
-                )}
+                {/* Static star icon, no rotation or scaling */}
+                <Sparkles className="text-yellow-500 inline-block ml-2" size={32} />
                 
-                {/* Underline: No infinite shimmer on mobile */}
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 1, delay: 1.2 }}
-                  className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 origin-left"
-                >
-                  {!isMobile && (
-                    <motion.div
-                      animate={{ x: ['-100%', '100%'] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                      className="h-full w-1/3 bg-gradient-to-r from-transparent via-white to-transparent"
-                    />
-                  )}
-                </motion.div>
-              </motion.span>
-            </motion.h1>
+                {/* Static underline, no shimmer animation */}
+                <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full" />
+              </span>
+            </h1>
           </motion.div>
           
+          {/* Typing animation kept as requested */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl mb-8 h-8"
           >
             <span className="text-gray-700 dark:text-gray-300">
@@ -166,7 +108,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="text-lg mb-12 max-w-2xl mx-auto"
           >
             <span className="text-theme">
@@ -174,11 +116,11 @@ export function Hero() {
             </span>
           </motion.p>
           
-          {/* Social links */}
+          {/* Social links: Simplified entrance, no complex hover loops on mobile */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
             className="flex items-center justify-center gap-4 mb-12"
           >
             {[
@@ -193,10 +135,10 @@ export function Hero() {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 whileHover={isMobile ? {} : { scale: 1.1, y: -5 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-4 bg-gradient-to-br ${bgColor} text-white rounded-full shadow-lg transition-shadow relative group`}
+                className={`p-4 bg-gradient-to-br ${bgColor} text-white rounded-full shadow-lg transition-shadow`}
                 aria-label={label}
               >
                 <Icon size={24} />
@@ -207,25 +149,16 @@ export function Hero() {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
+            transition={{ duration: 0.8, delay: 1.4 }}
             whileHover={isMobile ? {} : { scale: 1.05, boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('projects')}
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg text-lg font-medium shadow-lg relative overflow-hidden group"
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg text-lg font-medium shadow-lg relative overflow-hidden"
           >
-            {/* Button shimmer: ONLY on desktop */}
-            {!isMobile && (
-              <motion.div
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-              />
-            )}
             <span className="relative z-10">View My Work</span>
           </motion.button>
           
           <motion.button
-            // FIX 6: Disable bouncing arrow animation on mobile
             animate={isMobile ? {} : { y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
             onClick={() => scrollToSection('about')}
