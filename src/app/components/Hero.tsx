@@ -18,7 +18,7 @@ export function Hero() {
       <ParticlesBackground />
       <FloatingShapes />
       
-      {/* Enhanced animated background elements */}
+      {/* Enhanced animated background elements - Hidden on mobile to prevent GPU hanging */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -30,7 +30,7 @@ export function Hero() {
           repeat: Infinity,
           ease: 'linear',
         }}
-        className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl"
+        className="hidden md:block absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-500/5 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -43,10 +43,10 @@ export function Hero() {
           repeat: Infinity,
           ease: 'linear',
         }}
-        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl"
+        className="hidden md:block absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-500/5 rounded-full blur-3xl"
       />
       
-      {/* New animated background elements */}
+      {/* New animated background elements - Hidden on mobile to prevent GPU hanging */}
       <motion.div
         animate={{
           y: [0, -40, 0],
@@ -58,7 +58,7 @@ export function Hero() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/4 right-1/3 w-48 h-48 bg-teal-400/10 dark:bg-teal-500/5 rounded-full blur-2xl"
+        className="hidden md:block absolute top-1/4 right-1/3 w-48 h-48 bg-teal-400/10 dark:bg-teal-500/5 rounded-full blur-2xl"
       />
       <motion.div
         animate={{
@@ -71,7 +71,7 @@ export function Hero() {
           repeat: Infinity,
           ease: 'linear',
         }}
-        className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-2xl"
+        className="hidden md:block absolute bottom-1/3 left-1/4 w-64 h-64 bg-amber-400/10 dark:bg-amber-500/5 rounded-full blur-2xl"
       />
       <motion.div
         animate={{
@@ -84,7 +84,7 @@ export function Hero() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-1/3 left-1/4 w-32 h-32 bg-gradient-to-br from-pink-400/20 to-rose-500/10 dark:from-pink-500/10 dark:to-rose-600/10 rounded-lg blur-xl"
+        className="hidden md:block absolute top-1/3 left-1/4 w-32 h-32 bg-gradient-to-br from-pink-400/20 to-rose-500/10 dark:from-pink-500/10 dark:to-rose-600/10 rounded-lg blur-xl"
       />
       <motion.div
         animate={{
@@ -96,10 +96,10 @@ export function Hero() {
           repeat: Infinity,
           repeatDelay: 2,
         }}
-        className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-gradient-to-br from-cyan-400/30 to-emerald-500/20 dark:from-cyan-500/15 dark:to-emerald-600/15 rounded-full blur-lg"
+        className="hidden md:block absolute bottom-1/4 right-1/3 w-24 h-24 bg-gradient-to-br from-cyan-400/30 to-emerald-500/20 dark:from-cyan-500/15 dark:to-emerald-600/15 rounded-full blur-lg"
       />
       
-      {/* Animated grid background with enhanced depth */}
+      {/* Animated grid background with enhanced depth (Lightweight, kept on mobile) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
         <motion.div
           animate={{
@@ -113,7 +113,7 @@ export function Hero() {
         />
       </div>
       
-      {/* Floating orbs with path animation */}
+      {/* Floating orbs with path animation - Hidden on mobile to prevent severe GPU lag */}
       <motion.div
         animate={{
           pathLength: [0, 1],
@@ -124,7 +124,7 @@ export function Hero() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="hidden md:block absolute top-0 left-0 w-full h-full pointer-events-none"
         style={{ 
           maskImage: 'radial-gradient(circle, white 10%, transparent 70%)',
           WebkitMaskImage: 'radial-gradient(circle, white 10%, transparent 70%)'
@@ -177,18 +177,22 @@ export function Hero() {
 
       <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Avatar - animation removed */}
-          <div className="mb-8">
+          {/* Avatar with simplified animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-8"
+          >
             <div className="w-40 h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full relative overflow-hidden shadow-xl">
               <ImageWithFallback
                 src="/s.jpg"
                 alt="Sandesh Acharya"
                 className="w-full h-full object-cover"
               />
-              {/* Simple border accent - no heavy animation */}
               <div className="absolute inset-0 rounded-full border-2 border-blue-500/30" />
             </div>
-          </div>
+          </motion.div>
           
           {/* Main heading with stagger animation */}
           <motion.div
