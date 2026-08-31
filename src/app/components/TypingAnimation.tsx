@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 
 interface TypingAnimationProps {
@@ -39,11 +38,8 @@ export function TypingAnimation({ texts, className = '' }: TypingAnimationProps)
   return (
     <span className={className}>
       {currentText}
-      <motion.span
-        animate={{ opacity: [1, 0, 1] }}
-        transition={{ duration: 0.8, repeat: Infinity }}
-        className="inline-block w-0.5 h-6 bg-current ml-1 align-middle"
-      />
+      {/* CSS-only blinking cursor - NO Framer Motion */}
+      <span className="typing-cursor inline-block w-0.5 h-6 bg-current ml-1 align-middle" />
     </span>
   );
 }
